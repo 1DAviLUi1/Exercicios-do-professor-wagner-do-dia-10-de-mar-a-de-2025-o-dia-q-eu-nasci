@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int numero, pote_hermetico, kumbaya, resultado;
+    pote_hermetico = 1, kumbaya = 0;
+    printf(" Digite seu numero talvez magico:");
+    scanf(" %d", &numero);
+    if (numero == 0){
+        printf("Voce escolheu %d O.o, esse numero Tanasequencia fibonacci, considere-se especial :D\n");
+        return 0;
+    }
+    else if (numero == 1){
+        printf("Voce escolheu %d O.o,esse numero Tanasequencia fibonacci, considere-se especial :D\n");
+        return 0;
+    }
+    while (pote_hermetico < numero){
+        resultado = kumbaya + pote_hermetico;
+        kumbaya = pote_hermetico;
+        pote_hermetico = resultado;
+    }
+    if (resultado == numero){
+        printf("Voce escolheu %d O.o, esse numero Tanasequencia fibonacci, considere-se especial :D\n");
+    }
+    else{
+        printf(" %d seu numero nao ta na sequencia de fibonacci, parabens voce nao é especial :/");
+    }
+    return 0;
+}
