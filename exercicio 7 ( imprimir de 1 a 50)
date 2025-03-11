@@ -1,0 +1,15 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+  int a;
+  a = 0;
+  int resultado;
+  resultado = 0;
+  
+  while(a <50){
+      a = a +1;
+  resultado = resultado + a;
+  printf( " %d\n", resultado);
+  }
+}
