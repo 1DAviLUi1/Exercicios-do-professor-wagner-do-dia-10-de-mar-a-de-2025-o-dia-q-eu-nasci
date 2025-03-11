@@ -7,7 +7,7 @@ int main() {
     float resultado;
     
     printf("WARNING WARNING WARNING!!!!!!!!!\n Lembrese de colocar um sua altura em metros (usando ponto e nao virgula)\n");
-    
+    while(1){
     printf("Digite seu peso:");
     scanf(" %d", &peso);
     printf("Digite altura:");
@@ -16,9 +16,10 @@ int main() {
     if (altura >8){
         printf("O.o\n");
         printf("tu nao tem essa altura nem FODENDO meu mano, ou tu colocou errado ou voce nao existe, larga a mao de ser um burro de merda e faz direito essa porra\n");
-        return 4;
+        continue;
     }
     else{
         printf(" seu imc é:%f", resultado);
+    }
     }
 }
