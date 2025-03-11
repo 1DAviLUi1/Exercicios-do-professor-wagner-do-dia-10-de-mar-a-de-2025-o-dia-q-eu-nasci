@@ -1,4 +1,3 @@
-// Online C compiler to run C program online
 #include <stdio.h>
 
 int main() {
@@ -6,20 +5,21 @@ int main() {
     int peso;
     float resultado;
     
-    printf("WARNING WARNING WARNING!!!!!!!!!\n Lembrese de colocar um sua altura em metros (usando ponto e nao virgula)\n");
+    printf("!!!!!1111!!!111!!AVISO LEIA COM ATENÇAO AVISO LEIA COM ATENÇAO!!!1111!!!!!111!\n Lembrese de colocar um sua altura em metros (usando ponto e nao virgula)\n");
     while(1){
     printf("Digite seu peso:");
     scanf(" %d", &peso);
     printf("Digite altura:");
     scanf(" %f", &altura);
     resultado = peso / (altura * altura);
-    if (altura >8){
-        printf("O.o\n");
-        printf("tu nao tem essa altura nem FODENDO meu mano, ou tu colocou errado ou voce nao existe, larga a mao de ser um burro de merda e faz direito essa porra\n");
+    if (altura >4){
+        printf("O.o tu nao tem essa altura nem FODENDO meu mano, ou tu colocou errado ou voce nao existe, larga a mao de ser um filho da puta burro e faz direito essa porra :/\n Vou te dar outra chance vai faz dnv\n");
         continue;
     }
     else{
-        printf(" seu imc é:%f", resultado);
+        printf(" seu imc é:%f :P", resultado);
+        break;
     }
     }
+    return 0;
 }
