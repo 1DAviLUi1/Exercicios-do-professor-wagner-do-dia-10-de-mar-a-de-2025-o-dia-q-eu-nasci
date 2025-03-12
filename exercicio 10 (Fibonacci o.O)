@@ -4,26 +4,27 @@
 int main() {
     int numero, pote_hermetico, kumbaya, resultado;
     pote_hermetico = 1, kumbaya = 0;
-    printf(" Digite seu numero talvez magico:");
+    printf(" Digite seu numero talvez magico: ");
     scanf(" %d", &numero);
     if (numero == 0){
-        printf("Voce escolheu %d O.o, esse numero Tanasequencia fibonacci, considere-se especial :D\n");
+        printf("Voce escolheu %d O.o, esse numero Tanasequencia fibonacci como acima é mostrado, considere-se especial :D\n", numero);
         return 0;
     }
     else if (numero == 1){
-        printf("Voce escolheu %d O.o,esse numero Tanasequencia fibonacci, considere-se especial :D\n");
+        printf("Voce escolheu %d O.o,esse numero Tanasequencia fibonacci como acima é mostrado, considere-se especial :D\n", numero);
         return 0;
     }
     while (pote_hermetico < numero){
         resultado = kumbaya + pote_hermetico;
         kumbaya = pote_hermetico;
         pote_hermetico = resultado;
+        printf("%d  %d  %d\n", kumbaya, pote_hermetico, resultado);
     }
     if (resultado == numero){
-        printf("Voce escolheu %d O.o, esse numero Tanasequencia fibonacci, considere-se especial :D\n");
+        printf("Voce escolheu %d O.o, esse numero Tanasequencia fibonacci como acima é mostrado, considere-se especial :D\n", numero);
     }
     else{
-        printf(" %d seu numero nao ta na sequencia de fibonacci, parabens voce nao é especial :/");
+        printf("Como poder ver acima o numero: %d que voce mesmo escolheu nao ta na sequencia de fibonacci, parabens voce nao é nem um pouco especial :/", numero);
     }
     return 0;
 }
