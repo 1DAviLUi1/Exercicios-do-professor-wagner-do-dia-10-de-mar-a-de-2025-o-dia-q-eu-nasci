@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+    int a, b;
+    printf("Digite 2 numeros: ");
+    scanf(" %d %d", &a, &b);
+    if(a ==b){
+        printf(" %d Ele sao enguais:D", a);
+    }
+    else{
+        printf("Eles naosao enguais :L");
+    }
+    return 0;
+}
