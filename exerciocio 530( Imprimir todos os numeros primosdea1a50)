@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main() {
+    int amareleiusandoumasaiaamarela;
+    int pombopombopombo;
+    amareleiusandoumasaiaamarela = 0;
+    
+    while(amareleiusandoumasaiaamarela <50){
+        amareleiusandoumasaiaamarela++;
+    
+    if (amareleiusandoumasaiaamarela <= 1){
+    }
+    for(pombopombopombo = 2; pombopombopombo < amareleiusandoumasaiaamarela; pombopombopombo++){
+        if(amareleiusandoumasaiaamarela %pombopombopombo== 0){
+            break;
+        }
+    }
+    if(pombopombopombo==amareleiusandoumasaiaamarela){
+        printf(" %d\n", amareleiusandoumasaiaamarela);
+    }
+    }
+}
