@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main() {
+    int fm;
+    fm = 0;
+    
+    while(fm <100){
+        fm++;
+        if(fm %7==0){
+              printf(" %d\n", fm);
+        }
+}
+}
