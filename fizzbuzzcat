@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main() {
+    int hashtagvoce;
+    hashtagvoce = 0;
+    
+    while(hashtagvoce <100){
+        hashtagvoce++;
+        if(hashtagvoce %5==0 && hashtagvoce %3==0){
+              printf(" %d FizzBuzz\n", hashtagvoce);
+        }
+        else if(hashtagvoce %5==0){
+            printf(" %d Buzz\n", hashtagvoce);
+        }
+        else if(hashtagvoce %3==0 ){
+            printf(" %d Fizz\n", hashtagvoce);
+        }
+        else{
+            printf(" %d :/\n", hashtagvoce);
+        }
+    }
+}
