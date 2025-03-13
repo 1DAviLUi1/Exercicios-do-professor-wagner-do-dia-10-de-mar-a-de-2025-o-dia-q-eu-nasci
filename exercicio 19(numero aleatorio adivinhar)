@@ -1,0 +1,19 @@
+///ref https://www.youtube.com/watch?v=CJ37J_Cdd8Q
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main() {
+    srand(time(0));
+    int rnd, act;
+    rnd = (rand() %10);
+    
+    printf("adivinhe o numero (vcsotem uma chance :V)\n");
+    printf("Digite: ");
+    scanf( "%d", &act);
+    if(act == rnd){
+        printf("Voce acertou, Parabens :D");
+    }
+    else{
+        printf("Voce errou :(");
+    }
+}
