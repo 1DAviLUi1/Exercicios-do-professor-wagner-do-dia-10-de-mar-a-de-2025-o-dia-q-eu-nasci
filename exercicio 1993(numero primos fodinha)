@@ -1,1 +1,21 @@
+/*Explicacaoprosburros https://prnt.sc/VoDto8knNakQ*/
+#include <stdio.h>
+int main() {
+    int numero;
+    int pombopombopombo;
+    printf("Digite seu numero: ");
+    scanf(" %d", &numero);
+    if (numero <= 1){
+        printf("nao é primo :/");
+    }
+    for(pombopombopombo = 2; pombopombopombo < numero; pombopombopombo++){
+        if(numero %pombopombopombo== 0){
+            printf("nao é primo :/");
+            break;
+        }
+    }
+    if(pombopombopombo==numero){
+        printf("é primo :D");
+    }
 
+}
