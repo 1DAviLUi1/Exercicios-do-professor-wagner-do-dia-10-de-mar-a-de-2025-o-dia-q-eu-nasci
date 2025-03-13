@@ -1,0 +1,17 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    int n;
+    
+    printf("Digite seu numero: ");
+    scanf(" %d", &n);
+    if( n %2 == 0){
+            printf(" %d: é um numero par", n);
+        }
+        else{
+            printf(" %d: é um numero impar", n);
+        }
+    }
+    
+    
