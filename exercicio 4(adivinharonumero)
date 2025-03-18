@@ -1,4 +1,4 @@
-// Online C compiler to run C program online
+// se for rodar no pogramiz usa essa versao veia podre aqui
 #include <stdio.h>
 
 int main() {
@@ -15,7 +15,47 @@ int main() {
     return 0;
     }
     else{
-        printf("Voce ta errado :P\n");
+        printf("Voce ta errado :P, tente dnv\n");
+        continue;
+    }
+    }
+}
+
+
+
+
+
+
+
+
+SE FOR RODAR NO CODEBLOCK OU EM QUALQUER OUTRO QUE PRESTE USA ESSA VERSAO FODONA AQUI.
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+void chronic(){
+    #ifdef _WIN32
+    system("cls");
+    #else
+    system("clear");
+    #endif
+}
+
+int main() {
+    int num;
+    int mun;
+    num = 8;
+    while(1){
+    printf("Adivinhe o numero que eu estou pensando\n");
+    printf("Digite:");
+    scanf(" %d", &mun);
+    
+    if (mun == 8){
+    printf("Voce acertou O.o, parabens");
+    return 0;
+    }
+    else{
+        chronic();
+        printf("Voce ta errado :P, tente dnv\n");
         continue;
     }
     }
