@@ -13,6 +13,6 @@ int main() {
         printf("o numero é Positivo");
     }
     else{
-        printf(" o numero é 0");
+        printf(" isso é uma letra irmao");
     }
 }
