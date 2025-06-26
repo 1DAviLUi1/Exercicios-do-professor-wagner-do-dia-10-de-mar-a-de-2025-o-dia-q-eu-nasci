@@ -1,0 +1,151 @@
+-- 1. Tabela 'funcao'
+CREATE TABLE IF NOT EXISTS funcao (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  funcionario VARCHAR(100) NOT NULL,
+  descricao VARCHAR(150) NOT NULL,
+  contrato VARCHAR(500) NOT NULL
+);
+
+-- 2. Tabela 'fato'
+CREATE TABLE IF NOT EXISTS fato (
+  id_fato INTEGER PRIMARY KEY AUTOINCREMENT,
+  descricao VARCHAR(200) NOT NULL,
+  gravidade VARCHAR(30) NOT NULL
+);
+
+-- 3. Tabela 'aluno'
+CREATE TABLE IF NOT EXISTS aluno (
+  cgm INTEGER PRIMARY KEY NOT NULL UNIQUE,
+  nome VARCHAR(400) NOT NULL,
+  nascimento DATE NOT NULL,
+  cpf_aluno VARCHAR(11) NOT NULL UNIQUE,
+  rg VARCHAR(9) NOT NULL UNIQUE,
+  genero TEXT,
+  email_aluno VARCHAR(800),
+  telefone_aluno VARCHAR(15),
+  endereco VARCHAR(500),
+  cep VARCHAR(9),
+  numero INTEGER,
+  complemento VARCHAR(200),
+  bairro VARCHAR(100),
+  cidade VARCHAR(250),
+  estado VARCHAR(150),
+  curso VARCHAR(50) NOT NULL,
+  turno VARCHAR(20) NOT NULL,
+  turma VARCHAR(10) NOT NULL
+);
+
+-- 4. Tabela 'funcionario'
+CREATE TABLE IF NOT EXISTS funcionario (
+  cpf VARCHAR(14) PRIMARY KEY NOT NULL UNIQUE,
+  nome VARCHAR(100) NOT NULL,
+  nascimento DATE NOT NULL,
+  rg VARCHAR(16) NOT NULL,
+  genero TEXT,
+  estado_civil TEXT,
+  email TEXT,
+  email_institucional TEXT,
+  telefone VARCHAR(15) NOT NULL UNIQUE,
+  telefone_alternativo VARCHAR(15) NOT NULL,
+  cep VARCHAR(9),
+  numero INTEGER,
+  complemento VARCHAR(200),
+  bairro VARCHAR(100),
+  cidade VARCHAR(250),
+  estado VARCHAR(150),
+  data_admissao DATE NOT NULL,
+  cargo VARCHAR(500),
+  carga_horaria INTEGER,
+  contrato VARCHAR(80),
+  numero_registro INTEGER,
+  id INTEGER,
+  FOREIGN KEY (id) REFERENCES funcao(id)
+);
+
+-- 5. Tabela 'responsavel'
+CREATE TABLE IF NOT EXISTS responsavel (
+  id_responsavel INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome VARCHAR(100) NOT NULL,
+  grau_parentesco TEXT,
+  telefone VARCHAR(11) NOT NULL UNIQUE,
+  cpf VARCHAR(16) NOT NULL UNIQUE,
+  email VARCHAR(50),
+  cgm INTEGER,
+  FOREIGN KEY (cgm) REFERENCES aluno(cgm)
+);
+
+-- 6. Tabela 'frequencia'
+CREATE TABLE IF NOT EXISTS frequencia (
+  id_frequencia INTEGER PRIMARY KEY AUTOINCREMENT,
+  dia DATE NOT NULL,
+  quant_aulas INTEGER NOT NULL,
+  ausencias INTEGER NOT NULL,
+  turma VARCHAR(4) NOT NULL,
+  cgm INTEGER,
+  FOREIGN KEY (cgm) REFERENCES aluno(cgm)
+);
+
+-- 7. Tabela 'ata'
+CREATE TABLE IF NOT EXISTS ata (
+  id_ata INTEGER PRIMARY KEY AUTOINCREMENT,
+  aluno VARCHAR(50) NOT NULL,
+  dia DATE NOT NULL,
+  assunto VARCHAR(500) NOT NULL,
+  monitor VARCHAR(50) NOT NULL,
+  conteudo VARCHAR(300),
+  encaminhamento VARCHAR(200),
+  cgm VARCHAR(10) NOT NULL,
+  turma VARCHAR(3) NOT NULL,
+  prof VARCHAR(20),
+  fato VARCHAR(20) NOT NULL
+);
+
+-- 8. Tabela 'ocorrencia'
+CREATE TABLE IF NOT EXISTS ocorrencia (
+  id_sequencial_ocorrencia INTEGER PRIMARY KEY AUTOINCREMENT,
+  fato_id INTEGER NOT NULL,
+  data DATE NOT NULL,
+  horario VARCHAR(4),
+  obs VARCHAR(500),
+  turma VARCHAR(3) NOT NULL,
+  FOREIGN KEY (fato_id) REFERENCES fato(id_fato)
+);
+
+-- 9. Tabela 'encaminhamento'
+CREATE TABLE IF NOT EXISTS encaminhamento (
+  id_encaminhamento INTEGER PRIMARY KEY AUTOINCREMENT,
+  tipo_fo INTEGER NOT NULL,
+  justificativa TEXT NOT NULL,
+  providencia TEXT,
+  data DATE NOT NULL,
+  cgm INTEGER,
+  cpf_funcionario VARCHAR(14),
+  FOREIGN KEY (tipo_fo) REFERENCES fato(id_fato),
+  FOREIGN KEY (cgm) REFERENCES aluno(cgm),a
+  FOREIGN KEY (cpf_funcionario) REFERENCES funcionario(cpf)
+);
+
+INSERT INTO funcionario (
+  cpf, nome, nascimento, rg, genero, estado_civil,
+  email, email_institucional, telefone, telefone_alternativo,
+  cep, numero, complemento, bairro, cidade, estado,
+  data_admissao, cargo, carga_horaria, contrato, numero_registro, id
+) VALUES
+(
+  '12345678900', 'Ana Beatriz Lima', '1985-05-10', 'MG1234567', 'Feminino', 'Casada',
+  'ana.lima@gmail.com', 'ana.lima@escola.edu.br', '45991001001', '45991001002',
+  '85860000', 345, 'Bloco B - Sala 3', 'Centro', 'Foz do Iguaçu', 'PR',
+  '2020-02-15', 'Professora de Matemática', 40, 'CLT', 456789, 1
+),
+(
+  '23456789011', 'Carlos Henrique Souza', '1978-09-22', 'PR9876543', 'Masculino', 'Solteiro',
+  'carlos.h.souza@yahoo.com', 'carlos.souza@escola.edu.br', '45992002002', '45992002003',
+  '85870000', 150, '', 'Jardim das Flores', 'Foz do Iguaçu', 'PR',
+  '2018-08-01', 'Coordenador Pedagógico', 40, 'Estatutário', 123456, 2
+),
+(
+  '34567890122', 'Juliana Alves Ferreira', '1990-12-05', 'SP4567890', 'Feminino', 'Solteira',
+  'juliana.alves@hotmail.com', 'juliana.ferreira@escola.edu.br', '45993003003', '45993003004',
+  '85880000', 98, 'Casa Verde', 'Vila Yolanda', 'Foz do Iguaçu', 'PR',
+  '2021-01-10', 'Assistente Social', 30, 'CLT', 789123, 3
+);
